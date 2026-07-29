@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>CadDevLoader.Net48</AssemblyName>
+    <RootNamespace>CadDevLoader</RootNamespace>
+    <AutoCADDir Condition="'$(AutoCADDir)' == ''">C:\Program Files\Autodesk\AutoCAD 2022</AutoCADDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj-next\**\*.cs" />
+    <Compile Include="..\Shared\DevLoaderCommands.cs" Link="DevLoaderCommands.cs" />
+    <Reference Include="AcCoreMgd">
+      <HintPath>$(AutoCADDir)\AcCoreMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>$(AutoCADDir)\AcMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>$(AutoCADDir)\AcDbMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateAutoCADReferences" BeforeTargets="ResolveReferences">
+    <Error
+      Condition="!Exists('$(AutoCADDir)\AcCoreMgd.dll')"
+      Text="AutoCAD API not found. Build with -p:AutoCADDir=&quot;C:\Program Files\Autodesk\AutoCAD 2022&quot;." />
+  </Target>
+</Project>
