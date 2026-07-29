@@ -1,0 +1,54 @@
+# Centralized build output
+Build/
+
+# Legacy or fallback .NET build output
+bin/
+obj/
+obj-next/
+build-obj-next/
+Output*/
+artifacts/
+
+# Visual Studio and IDE state
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Test and coverage output
+TestResults/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# Temporary and hot-reload artifacts
+.temp/
+.tmp/
+temp/
+Temp/
+CadDevLoaderBuild/
+*.tmp
+*.temp
+*.cache
+*.bak
+*.old
+*.orig
+*.rej
+~$*
+
+# Logs
+*.log
+
+# NuGet packages restored locally
+packages/
+*.nupkg
+*.snupkg
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini

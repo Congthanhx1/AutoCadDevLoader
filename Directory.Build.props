@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <!-- Keep every CadDevLoader build artifact under one predictable root. -->
+    <OutputPath>$(MSBuildThisFileDirectory)Build\</OutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)Build\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(TEMP)\CadDevLoaderBuild\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);**\bin\**;**\obj\**;**\obj-next\**;**\build-obj-next\**</DefaultItemExcludes>
+  </PropertyGroup>
+</Project>
