@@ -21,7 +21,7 @@ function Find-AutoCad {
     return $null
 }
 
-function Build-Loader {
+function Invoke-Loader {
     param(
         [string]$Project,
         [string]$AutoCadDirectory,
@@ -48,12 +48,12 @@ function Build-Loader {
 $net48Cad = Find-AutoCad -Years @(2024, 2023, 2022, 2021)
 $net8Cad = Find-AutoCad -Years @(2026, 2025)
 
-Build-Loader `
+Invoke-Loader `
     -Project (Join-Path $root "CadDevLoader.Net48\CadDevLoader.Net48.csproj") `
     -AutoCadDirectory $net48Cad `
     -Name "AutoCAD-2021-2024"
 
-Build-Loader `
+Invoke-Loader `
     -Project (Join-Path $root "CadDevLoader.Net8\CadDevLoader.Net8.csproj") `
     -AutoCadDirectory $net8Cad `
     -Name "AutoCAD-2025-2026"

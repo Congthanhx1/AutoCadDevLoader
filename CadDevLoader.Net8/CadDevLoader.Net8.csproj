@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Shared\DevLoaderCommands.cs" Link="DevLoaderCommands.cs" />
+    <Compile Include="..\Shared\**\*.cs" Link="Shared\%(RecursiveDir)%(Filename)%(Extension)" />
     <Reference Include="AcCoreMgd">
       <HintPath>$(AutoCADDir)\AcCoreMgd.dll</HintPath>
       <Private>false</Private>
