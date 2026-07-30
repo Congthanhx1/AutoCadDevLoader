@@ -113,15 +113,14 @@ namespace CadDevLoader.Shared.UI
 
             Panel header = new Panel { Dock = DockStyle.Top, Height = 48, BackColor = Color.FromArgb(35, 43, 55) };
             Label mark = new Label { Text = "D", Location = new Point(12, 10), Size = new Size(28, 28), BackColor = Color.FromArgb(255, 211, 78), ForeColor = Color.FromArgb(23, 32, 51), TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI", 11F, FontStyle.Bold) };
-            Label title = new Label { Text = "CAD DEV LOADER", Location = new Point(49, 7), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.White, Font = new Font("Segoe UI", 10F, FontStyle.Bold) };
-            Label subtitle = new Label { Text = L10n.T("Reload nhanh plugin AutoCAD .NET", "Hot reload AutoCAD .NET"), Location = new Point(49, 26), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 7.5F) };
+            Label title = new Label { Text = "CAD DEV LOADER", Location = new Point(49, 14), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.White, Font = new Font("Segoe UI", 10F, FontStyle.Bold) };
             _languageButton = new Button { Text = SettingsStore.UseEnglish ? "EN" : "VI", Location = new Point(222, 10), Size = new Size(36, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.FromArgb(255, 211, 78), Font = new Font("Segoe UI", 7.5F, FontStyle.Bold), Cursor = Cursors.Hand };
             _languageButton.FlatAppearance.BorderSize = 0;
             _languageButton.Click += (s, e) => ToggleLanguage();
             Button close = new Button { Text = "×", Location = new Point(264, 10), Size = new Size(24, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.White, Font = new Font("Segoe UI", 10F), Cursor = Cursors.Hand };
             close.FlatAppearance.BorderSize = 0;
             close.Click += (s, e) => { SettingsStore.SavePanelPosition(bar.Location); bar.Hide(); };
-            header.Controls.Add(mark); header.Controls.Add(title); header.Controls.Add(subtitle); header.Controls.Add(_languageButton); header.Controls.Add(close);
+            header.Controls.Add(mark); header.Controls.Add(title); header.Controls.Add(_languageButton); header.Controls.Add(close);
             bar.Controls.Add(header);
 
             Point dragOrigin = Point.Empty;
