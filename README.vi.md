@@ -6,6 +6,12 @@ AutoCadDevLoader là công cụ hỗ trợ phát triển plugin AutoCAD .NET v�
 
 Công cụ được thiết kế cho quá trình phát triển và gỡ lỗi plugin, không thay thế AutoCAD Application Bundle hoặc quy trình phát hành plugin chính thức.
 
+## Demo
+
+https://github.com/Congthanhx1/AutoCadDevLoader/raw/main/videos/demo-caddev-loader.mp4
+
+> Video trên minh họa cách nạp **CadDevLoader** vào AutoCAD và nạp DLL plugin để phát triển trực tiếp.
+
 ## Điểm nổi bật
 
 - **Reload mà không khóa DLL nguồn** — DLL build được sao chép vào một thư mục riêng trong `%TEMP%\CadDevLoader`, sau đó AutoCAD nạp bản sao này. Trình biên dịch vẫn có thể ghi đè DLL gốc ở lần build tiếp theo.
