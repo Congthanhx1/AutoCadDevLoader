@@ -157,14 +157,16 @@ namespace CadDevLoader
 
             if (plugin == null)
             {
-                WriteLine(L10n.T("\nChưa nạp plugin development nào.", "\nNo development plug-in is loaded."));
+                AcadApplication.ShowAlertDialog(L10n.T("Chưa nạp plugin development nào.", "No development plug-in is loaded."));
                 return;
             }
 
-            WriteLine(L10n.T("\nDLL nguồn: ", "\nSource: ") + plugin.SourcePath);
-            WriteLine(L10n.T("\nBản sao đã nạp: ", "\nLoaded copy: ") + plugin.LoadedPath);
-            WriteLine(L10n.T("\nThời điểm nạp: ", "\nLoaded at: ") + plugin.LoadedAt.ToString("yyyy-MM-dd HH:mm:ss"));
-            WriteLine(L10n.T("\nSố lệnh: ", "\nCommands: ") + plugin.Commands.Count);
+            string msg = L10n.T("DLL nguồn:\n", "Source:\n") + plugin.SourcePath + "\n\n"
+                       + L10n.T("Bản sao đã nạp:\n", "Loaded copy:\n") + plugin.LoadedPath + "\n\n"
+                       + L10n.T("Thời điểm nạp: ", "Loaded at: ") + plugin.LoadedAt.ToString("yyyy-MM-dd HH:mm:ss") + "\n"
+                       + L10n.T("Số lệnh: ", "Commands: ") + plugin.Commands.Count;
+            
+            AcadApplication.ShowAlertDialog(msg);
         }
 
         [CommandMethod("DEVSHOW", CommandFlags.Modal)]
