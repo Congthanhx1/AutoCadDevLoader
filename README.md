@@ -6,6 +6,12 @@ AutoCadDevLoader is a compact development loader for AutoCAD .NET plugins. It sh
 
 It is intended for plugin development and debugging. It is not a replacement for an AutoCAD Application Bundle or a production deployment system.
 
+## Demo
+
+https://github.com/user-attachments/assets/6f62afa9-705f-427a-b9c4-42de544da431
+
+> The video above shows how to load **CadDevLoader** into AutoCAD and inject a plugin DLL for live development.
+
 ## Why AutoCadDevLoader
 
 - **Reload without locking the source DLL** — the selected build DLL is copied to a unique folder under `%TEMP%\CadDevLoader` and AutoCAD loads that copy. Your original build output remains available to the compiler.
