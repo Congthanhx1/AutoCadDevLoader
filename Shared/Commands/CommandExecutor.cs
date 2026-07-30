@@ -38,13 +38,11 @@ namespace CadDevLoader.Shared.Commands
             {
                 Exception actualException = exception.InnerException ?? exception;
                 DevLogger.LastError = L10n.T("Lệnh ", "Command ") + command.Name + L10n.T(" thất bại: ", " failed: ") + actualException.ToString();
-                DevLogger.WriteLog(DevLogger.LastError);
                 writeLine?.Invoke("\n" + L10n.T("Lệnh ", "Command ") + command.Name + L10n.T(" thất bại: ", " failed: ") + actualException.Message);
             }
             catch (Exception exception)
             {
                 DevLogger.LastError = L10n.T("Lệnh ", "Command ") + command.Name + L10n.T(" thất bại: ", " failed: ") + exception.ToString();
-                DevLogger.WriteLog(DevLogger.LastError);
                 writeLine?.Invoke("\n" + L10n.T("Lệnh ", "Command ") + command.Name + L10n.T(" thất bại: ", " failed: ") + exception.Message);
             }
         }

@@ -13,6 +13,7 @@ namespace CadDevLoader.Shared.Logging
             set
             {
                 _lastError = value;
+                if (!string.IsNullOrEmpty(value)) WriteLog(value);
                 ErrorUpdated?.Invoke();
             }
         }
