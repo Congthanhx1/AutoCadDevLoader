@@ -40,5 +40,19 @@ namespace CadDevLoader.Shared.Logging
             }
             catch { }
         }
+
+        public static void OpenLogFile()
+        {
+            try { 
+                string logDir = SettingsStore.LogDirectory;
+                Directory.CreateDirectory(logDir); 
+                string file = Path.Combine(logDir, "log-" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
+                if (File.Exists(file))
+                    System.Diagnostics.Process.Start("notepad.exe", file); 
+                else
+                    System.Diagnostics.Process.Start("explorer.exe", logDir); 
+            }
+            catch { }
+        }
     }
 }

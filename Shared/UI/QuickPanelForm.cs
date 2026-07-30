@@ -216,11 +216,16 @@ namespace CadDevLoader.Shared.UI
             _commandsPanel.HorizontalScroll.Visible = false;
             bar.Controls.Add(_commandsPanel);
 
-            _errorInfo = new Label { Location = new Point(18, 538), Size = new Size(198, 42), BackColor = Color.FromArgb(30, 36, 47), ForeColor = Color.FromArgb(112, 210, 164), Padding = new Padding(9, 0, 7, 0), AutoEllipsis = true, TextAlign = ContentAlignment.MiddleLeft, Cursor = Cursors.Hand };
-            _errorInfo.Click += (s, e) => CopyLastError();
-            Button copyError = AddQuickButton(bar, L10n.T("SAO CHÉP", "COPY LOG"), 222, 538, Color.FromArgb(54, 63, 78), CopyLastError);
-            copyError.Size = new Size(60, 42);
-            copyError.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
+            _errorInfo = new Label { Location = new Point(18, 538), Size = new Size(174, 42), BackColor = Color.FromArgb(30, 36, 47), ForeColor = Color.FromArgb(112, 210, 164), Padding = new Padding(9, 0, 7, 0), AutoEllipsis = true, TextAlign = ContentAlignment.MiddleLeft, Cursor = Cursors.Hand };
+            _errorInfo.Click += (s, e) => DevLogger.OpenLogFile();
+            
+            Button openError = AddQuickButton(bar, L10n.T("MỞ FILE", "OPEN"), 196, 538, Color.FromArgb(41, 128, 185), DevLogger.OpenLogFile);
+            openError.Size = new Size(42, 42);
+            openError.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+
+            Button copyError = AddQuickButton(bar, L10n.T("CHÉP", "COPY"), 242, 538, Color.FromArgb(54, 63, 78), CopyLastError);
+            copyError.Size = new Size(40, 42);
+            copyError.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
             bar.Controls.Add(_errorInfo);
 
             RefreshQuickCommands();
