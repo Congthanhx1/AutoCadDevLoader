@@ -115,17 +115,13 @@ namespace CadDevLoader.Shared.UI
             Label mark = new Label { Text = "D", Location = new Point(12, 10), Size = new Size(28, 28), BackColor = Color.FromArgb(255, 211, 78), ForeColor = Color.FromArgb(23, 32, 51), TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI", 11F, FontStyle.Bold) };
             Label title = new Label { Text = "CAD DEV LOADER", Location = new Point(49, 7), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.White, Font = new Font("Segoe UI", 10F, FontStyle.Bold) };
             Label subtitle = new Label { Text = L10n.T("Reload nhanh plugin AutoCAD .NET", "Hot reload AutoCAD .NET"), Location = new Point(49, 26), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 7.5F) };
-            Button infoButton = new Button { Text = "i", Location = new Point(194, 10), Size = new Size(24, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic), Cursor = Cursors.Hand };
-            infoButton.FlatAppearance.BorderSize = 0;
-            infoButton.Click += (s, e) => ShowAboutDialog();
             _languageButton = new Button { Text = SettingsStore.UseEnglish ? "EN" : "VI", Location = new Point(222, 10), Size = new Size(36, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.FromArgb(255, 211, 78), Font = new Font("Segoe UI", 7.5F, FontStyle.Bold), Cursor = Cursors.Hand };
             _languageButton.FlatAppearance.BorderSize = 0;
             _languageButton.Click += (s, e) => ToggleLanguage();
             Button close = new Button { Text = "×", Location = new Point(264, 10), Size = new Size(24, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.White, Font = new Font("Segoe UI", 10F), Cursor = Cursors.Hand };
             close.FlatAppearance.BorderSize = 0;
             close.Click += (s, e) => { SettingsStore.SavePanelPosition(bar.Location); bar.Hide(); };
-            header.Controls.Add(mark); header.Controls.Add(title); header.Controls.Add(subtitle); header.Controls.Add(infoButton); header.Controls.Add(_languageButton); header.Controls.Add(close);
-            infoButton.BringToFront();
+            header.Controls.Add(mark); header.Controls.Add(title); header.Controls.Add(subtitle); header.Controls.Add(_languageButton); header.Controls.Add(close);
             bar.Controls.Add(header);
 
             Point dragOrigin = Point.Empty;
@@ -165,6 +161,8 @@ namespace CadDevLoader.Shared.UI
             moreMenu.Items.Add(L10n.T("Dọn cache cũ", "Clean old cache"), null, (s, e) => CleanCacheAction?.Invoke());
             moreMenu.Items.Add(L10n.T("Sao chép log lỗi", "Copy error log"), null, (s, e) => CopyLastError());
             moreMenu.Items.Add(L10n.T("Mở thư mục log", "Open log folder"), null, (s, e) => DevLogger.OpenLogFolder());
+            moreMenu.Items.Add(new ToolStripSeparator());
+            moreMenu.Items.Add(L10n.T("Giới thiệu...", "About..."), null, (s, e) => ShowAboutDialog());
             _moreButton.Click += (s, e) => moreMenu.Show(_moreButton, new Point(0, _moreButton.Height));
             _toolTip.SetToolTip(_moreButton, L10n.T("Nạp DLL, trạng thái và công cụ bảo trì", "DLL loading, status and maintenance tools"));
 
