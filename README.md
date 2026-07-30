@@ -8,7 +8,7 @@ It is intended for plugin development and debugging. It is not a replacement for
 
 ## Demo
 
-https://github.com/Congthanhx1/AutoCadDevLoader/raw/main/videos/demo-caddev-loader.mp4
+<video src="https://github.com/Congthanhx1/AutoCadDevLoader/raw/main/videos/demo-caddev-loader.mp4" controls width="100%"></video>
 
 > The video above shows how to load **CadDevLoader** into AutoCAD and inject a plugin DLL for live development.
 

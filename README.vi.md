@@ -8,7 +8,7 @@ Công cụ được thiết kế cho quá trình phát triển và gỡ lỗi pl
 
 ## Demo
 
-https://github.com/Congthanhx1/AutoCadDevLoader/raw/main/videos/demo-caddev-loader.mp4
+<video src="https://github.com/Congthanhx1/AutoCadDevLoader/raw/main/videos/demo-caddev-loader.mp4" controls width="100%"></video>
 
 > Video trên minh họa cách nạp **CadDevLoader** vào AutoCAD và nạp DLL plugin để phát triển trực tiếp.
 
