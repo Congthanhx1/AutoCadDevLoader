@@ -113,8 +113,8 @@ namespace CadDevLoader.Shared.UI
 
             Panel header = new Panel { Dock = DockStyle.Top, Height = 48, BackColor = Color.FromArgb(35, 43, 55) };
             Label mark = new Label { Text = "D", Location = new Point(12, 10), Size = new Size(28, 28), BackColor = Color.FromArgb(255, 211, 78), ForeColor = Color.FromArgb(23, 32, 51), TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI", 11F, FontStyle.Bold) };
-            Label title = new Label { Text = "CAD DEV LOADER", Location = new Point(49, 7), Size = new Size(140, 20), ForeColor = Color.White, Font = new Font("Segoe UI", 10F, FontStyle.Bold) };
-            Label subtitle = new Label { Text = L10n.T("Reload nhanh plugin AutoCAD .NET", "Hot reload AutoCAD .NET"), Location = new Point(49, 26), Size = new Size(140, 16), ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 7.5F) };
+            Label title = new Label { Text = "CAD DEV LOADER", Location = new Point(49, 7), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.White, Font = new Font("Segoe UI", 10F, FontStyle.Bold) };
+            Label subtitle = new Label { Text = L10n.T("Reload nhanh plugin AutoCAD .NET", "Hot reload AutoCAD .NET"), Location = new Point(49, 26), AutoSize = true, BackColor = Color.Transparent, ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 7.5F) };
             Button infoButton = new Button { Text = "i", Location = new Point(194, 10), Size = new Size(24, 24), FlatStyle = FlatStyle.Flat, BackColor = Color.FromArgb(54, 63, 78), ForeColor = Color.FromArgb(145, 158, 180), Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic), Cursor = Cursors.Hand };
             infoButton.FlatAppearance.BorderSize = 0;
             infoButton.Click += (s, e) => ShowAboutDialog();
